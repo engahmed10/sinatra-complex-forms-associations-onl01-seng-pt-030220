@@ -26,7 +26,8 @@ class OwnersController < ApplicationController
   end
 
   get '/owners/:id' do
-    @owner = Owner.find(params[:id])
+    @owner = Owner.find_by_id(params[:id])
+    binding.pry
     erb :'/owners/show'
   end
 
